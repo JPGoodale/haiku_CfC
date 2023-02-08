@@ -51,7 +51,7 @@ def make_network() -> hk.RNNCore:
 
 
 def make_optimizer() -> optax.GradientTransformation:
-  return optax.rmsprop(LEARNING_RATE.value, decay=0.00029)
+  return optax.adam(LEARNING_RATE.value)
 
 
 def sequence_loss(batch: dataset.Batch) -> jnp.ndarray:
